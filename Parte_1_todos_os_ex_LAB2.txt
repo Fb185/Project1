@@ -1,0 +1,16 @@
+Parte 1
+Ex.1
+O código em questão possui a lista de números inteiros [1;5] associada ao ciclo "for i".
+O que o código faz é adicionar a 0 o valor de i^2, percorrendo todos os valores de i, para o efeito.
+O resultado ao correr o programa é executar as opereções que já referi e apresentar os respetivos resultados ao utilizador.
+
+
+Ex.2
+O código em questão possui duas listas de números inteiros associadas, respetivamente, ao ciclo "for i" e ao ciclo "for j".
+O ciclo "for j" está contido no "for i" sendo que a lista começa em 5 e vai até 0, e onde se subtrai 1 ao elemento anterior.
+O ciclo "for i" é os valores inteiros do intervalo [1;5].
+O código soma cada valor de i a cada valor de j (1+5, 1+4, 1+3, 1+2, 1+1, 1+0; seguidamente 2+5, 2+4, 2+3, [...]) e apresenta o resto da divisão do valor obtido em cada uma dessas somas por 2.
+
+Ex.3
+O código em questão possui uma lista de números inteiros associada ao ciclo "for i", que começa em 0 e acaba em 19.
+O código mostra-nos todos os números deste conjunto, mas omite o número 5 e o número 10.
