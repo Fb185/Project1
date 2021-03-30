@@ -26,6 +26,7 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -40,7 +41,10 @@ Plug 'OmniSharp/omnisharp-vim'
 Plug 'dense-analysis/ale'
 call plug#end()
 
-
+color gruvbox
+nmap<leader>gd <plug>(coc-definition)
+nmap<leader>gr <Plug>(coc-references)
+nnoremap <C-p> :FFiles<CR>
 
 
 set background=dark
@@ -55,7 +59,7 @@ nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>i :UndotreeHide<CR>
 nnoremap <leader>p :vsp<CR>
 
-"opens explorer and resizes it 
+"opens explorer and resizes it
 nnoremap <leader>v :wincmd v<bar> :Ex <bar><CR>
 
 "manual resize keybindig
@@ -67,11 +71,9 @@ inoremap <C-k> <Esc>
 vnoremap <C-k> <Esc>
 
 "integrated terminal
-fu GetTerm()
+fu GT()
     term
     wincmd x
-    res 23
+    res 20
 endfu
-nnoremap <leader> t :call GetTerm()<CR>
-
-
+nnoremap <leader> t :call GT()<CR>
