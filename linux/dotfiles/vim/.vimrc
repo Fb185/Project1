@@ -1,5 +1,7 @@
 syntax on
 
+
+set nopaste
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -16,6 +18,11 @@ set relativenumber
 set nowrap
 set t_Co=256
 set encoding=utf-8
+set guifont=*
+set guioptions-=T
+set guioptions-=r
+set go-=L
+
 
 let g:airline_powerline_fonts = 1
 let g:OmniSharp_server_stdio = 1
@@ -39,12 +46,13 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'dense-analysis/ale'
+
 call plug#end()
 
 color gruvbox
 nmap<leader>gd <plug>(coc-definition)
 nmap<leader>gr <Plug>(coc-references)
-nnoremap <C-p> :FFiles<CR>
+nnoremap <C-p> :Files<CR>
 
 
 set background=dark
@@ -59,6 +67,7 @@ nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>i :UndotreeHide<CR>
 nnoremap <leader>p :vsp<CR>
 
+
 "opens explorer and resizes it
 nnoremap <leader>v :wincmd v<bar> :Ex <bar><CR>
 
@@ -70,10 +79,21 @@ nnoremap <silent><leader>- :vertical resize -4<CR>
 inoremap <C-k> <Esc>
 vnoremap <C-k> <Esc>
 
+
+"copy and paste from and to other progams
+vnoremap <C-c> "+y
+map <C-v> "+P
+
+
+
+"alt for visual mode
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
 "integrated terminal
-fu GT()
+fu Geterm()
     term
     wincmd x
     res 20
 endfu
-nnoremap <leader> t :call GT()<CR>
+nnoremap <leader>t :call Geterm()<CR>
